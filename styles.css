@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 :root
 {
     --game-width: 700px;
@@ -20,6 +22,7 @@
     height: var(--game-height);
     border: 1px solid black;
     margin: auto;
+    position:relative;
 }
 
 #dino{
@@ -66,4 +69,14 @@
         left: -20px;
     }
     
+}
+
+/*overlay it as to not disturb the game*/
+#score {
+    text-align: right;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
 }
