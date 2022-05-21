@@ -1,6 +1,6 @@
 :root
 {
-    --game-width: 600px;
+    --game-width: 700px;
     --game-height: 200px;
     
     --cactus-width: 20px;
@@ -10,6 +10,7 @@
     --dino-width: 50px;
     --dino-height: 50px;
     --dino-image: url(img/trex.png);
+    --dino-jump-top: calc(var(--game-height) - var(--dino-height));
     
     --cactus-time: 1;
 }
@@ -36,11 +37,11 @@
 
 @keyframes jump {
     0%, 100%{ 
-        top: calc(var(--game-height) - var(--dino-height));
+        top: var(--dino-jump-top)
     }
     
     50%{
-        top: calc(var(--game-height) - var(--dino-height)) - 60;
+        top: calc(var(--dino-jump-top) - 60px) ;
     }
 }
 
