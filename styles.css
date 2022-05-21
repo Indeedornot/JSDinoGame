@@ -1,0 +1,68 @@
+:root
+{
+    --game-width: 600px;
+    --game-height: 200px;
+    
+    --cactus-width: 20px;
+    --cactus-height: 40px;
+    --cactus-image: url(img/cactus.png);
+    
+    --dino-width: 50px;
+    --dino-height: 50px;
+    --dino-image: url(img/trex.png);
+    
+    --cactus-time: 1;
+}
+
+.game{
+    width: var(--game-width);
+    height: var(--game-height);
+    border: 1px solid black;
+    margin: auto;
+}
+
+#dino{
+    width: var(--dino-width);
+    height: var(--dino-height);
+    background-image: var(--dino-image);
+    background-size: var(--dino-width), var(--dino-height);
+    position: relative;
+    top: calc(var(--game-height) - var(--dino-height));
+}
+
+.jump{
+    animation: jump 500ms cubic-bezier(.17,.74,.17,1.09);
+}
+
+@keyframes jump {
+    0%, 100%{ 
+        top: calc(var(--game-height) - var(--dino-height));
+    }
+    
+    50%{
+        top: calc(var(--game-height) - var(--dino-height)) - 60;
+    }
+}
+
+#cactus{
+    width: var(--cactus-width);
+    height: var(--cactus-height);
+    position: relative;
+    top: calc(var(--game-height) - 2.3 * var(--cactus-height));
+    left: calc(var(--game-width) - var(--cactus-width)) ;
+    
+    background-image: url("img/cactus.png");
+    background-size: var(--cactus-width) var(--cactus-height);
+    animation: block 1s infinite linear;
+}
+
+@keyframes block {
+    0%{
+        calc(var(--game-width) - var(--cactus-width)) ;
+    }
+    
+    100%{
+        left: -20px;
+    }
+    
+}
